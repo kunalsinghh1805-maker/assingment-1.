@@ -1,0 +1,81 @@
+// Question 10.
+// Write a menu-driven C# program that repeatedly displays the following options until the user
+// chooses Exit:
+//• Check Even/Odd
+//• Find Largest of Three Numbers
+//• Calculate Factorial
+//• Exit
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int choice;
+
+        do
+        {
+            Console.WriteLine("1. Check Even/Odd");
+            Console.WriteLine("2. Find Largest of Three Numbers");
+            Console.WriteLine("3. Calculate Factorial");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice: ");
+            choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.Write("Enter a number: ");
+                    int num = Convert.ToInt32(Console.ReadLine());
+
+                    if (num % 2 == 0)
+                        Console.WriteLine(num + " is Even.");
+                    else
+                        Console.WriteLine(num + " is Odd.");
+                    break;
+
+                case 2:
+                    Console.Write("Enter first number: ");
+                    int a = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Enter second number: ");
+                    int b = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("Enter third number: ");
+                    int c = Convert.ToInt32(Console.ReadLine());
+
+                    if (a >= b && a >= c)
+                        Console.WriteLine("Largest number = " + a);
+                    else if (b >= a && b >= c)
+                        Console.WriteLine("Largest number = " + b);
+                    else
+                        Console.WriteLine("Largest number = " + c);
+                    break;
+
+                case 3:
+                    Console.Write("Enter a positive integer: ");
+                    int n = Convert.ToInt32(Console.ReadLine());
+
+                    long fact = 1;
+
+                    for (int i = 1; i <= n; i++)
+                    {
+                        fact = fact * i;
+                    }
+
+                    Console.WriteLine("Factorial = " + fact);
+                    break;
+
+                case 4:
+                    Console.WriteLine("Exiting Program...");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid Choice! Please try again.");
+                    break;
+            }
+
+        } while (choice != 4);
+    }
+}
