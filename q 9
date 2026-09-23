@@ -1,0 +1,33 @@
+// Question 9..
+// Write a C# program to input an integer and determine whether it is a Palindrome Number. (A
+// palindrome number remains the same when its digits are reversed.)
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter an integer: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        int original = num;
+        int reverse = 0;
+
+        while (num > 0)
+        {
+            int digit = num % 10;
+            reverse = reverse * 10 + digit;
+            num = num / 10;
+        }
+
+        if (original == reverse)
+        {
+            Console.WriteLine(original + " is a Palindrome Number.");
+        }
+        else
+        {
+            Console.WriteLine(original + " is Not a Palindrome Number.");
+        }
+    }
+} 
