@@ -1,0 +1,32 @@
+//Question 2
+//Write a C# program to input two numbers and display their sum, difference, product, quotient, and remainder.
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter a = ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter b = ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        int sum = a + b;
+        int diff = a - b;
+        int prod = a * b;
+        Console.WriteLine("sum = " + sum);
+        Console.WriteLine("difference = " + diff);
+        Console.WriteLine("Product = "+prod);
+
+        if(b != 0)
+        {
+            Console.WriteLine("Quotient = "+(a / b));
+            Console.WriteLine("Remainder = " + (a % b));
+        }
+        else
+        {
+            Console.WriteLine("Quotient = can't devide by zero");
+            Console.WriteLine("Remainder = can't devide by zero");
+        }
+    }
+}
