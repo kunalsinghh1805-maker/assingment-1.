@@ -1,0 +1,54 @@
+
+// Question 4
+// Write a C# program to input a student's marks (0–100) and display the grade according to the following criteria:
+// 91–100: O, 81–90: A+, 71–80: A, 61–70: B+, 51–60: B, below 50: Fail. 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the student's marks (0-100): ");
+
+        if (int.TryParse(Console.ReadLine(), out int marks))
+        {
+            
+            if (marks < 0 || marks > 100)
+            {
+                Console.WriteLine("Invalid input. Marks must be between 0 and 100.");
+            }
+            else
+            {
+                if (marks >= 91 && marks <= 100)
+                {
+                    Console.WriteLine("Grade: O");
+                }
+                else if (marks >= 81 && marks <= 90)
+                {
+                    Console.WriteLine("Grade: A+");
+                }
+                else if (marks >= 71 && marks <= 80)
+                {
+                    Console.WriteLine("Grade: A");
+                }
+                else if (marks >= 61 && marks <= 70)
+                {
+                    Console.WriteLine("Grade: B+");
+                }
+                else if (marks >= 51 && marks <= 60)
+                {
+                    Console.WriteLine("Grade: B");
+                }
+                else
+                {
+                    Console.WriteLine("Grade: Fail");
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer.");
+        }
+    }
+}
